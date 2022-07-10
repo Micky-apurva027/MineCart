@@ -59,6 +59,13 @@ class ProductsController < ApplicationController
     end
   end
 
+ def get_data
+  binding.pry
+  @product = Product.find(params[:product])
+  ran = rand.to_s[2..7].to_i
+  @report = Report.create(report_no: ran, customer_name: current_user.email, product: @product.name, product_type: @product.prod_type, vendor: @product.vendor, price: @product.price)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
@@ -74,6 +81,6 @@ class ProductsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def product_params
-      params.require(:product).permit(:name, :type, :vendor, :price)
+      params.require(:product).permit(:name, :prod_type, :vendor, :price)
     end
 end

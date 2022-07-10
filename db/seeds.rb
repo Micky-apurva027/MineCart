@@ -8,3 +8,7 @@
 User.destroy_all
 User.create(:email => "m@gmail.com", :admin => true, :password => "111111", :password_confirmation => "111111" )
 User.create(:email => "me@gmail.com", :admin => false, :password => "222222", :password_confirmation => "222222" )
+
+
+Product.destroy_all
+# Product.creat(:name => "Sungsam Refrigerator", :)
