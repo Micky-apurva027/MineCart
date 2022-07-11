@@ -9,10 +9,10 @@ class ReportsController < ApplicationController
   # end
 
   def index
-    # @report = Report.all
+    @report = Report.all
     # Report.basic_search(product_type: , vendor: )
-    @q = Report.ransack(params[:q])
-    @report = @q.result
+    # @q = Report.ransack(params[:q])
+    # @report = @q.result
   end
 
   def show
